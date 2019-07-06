@@ -1,0 +1,36 @@
+<ion-content>
+  <img src="https://image.freepik.com/free-photo/waffle-ice-cream-cones-with-flamingoes-paper-cut-out-pink-background_23-2147957507.jpghttps://image.freepik.com/free-photo/blue-light-miniature-birdhouse-with-string-against-pink-background_23-2148084271.jpg" alt="">
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <div padding>
+              <ion-item>
+                <ion-icon size="small" src="https://image.flaticon.com/icons/svg/108/108637.svg" style="margin:2px 10px"></ion-icon>
+                <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-icon size="small" src="https://image.flaticon.com/icons/svg/26/26053.svg" style="margin:2px 10px"></ion-icon>
+                <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+              </ion-item>
+              <div routerLink='/forgot' style="margin: 0px;
+              margin-top: -5px;
+              float: right;
+              font-size: 14px;">Forgot Password?</div>
+            </div>
+            <div padding>
+              <ion-button shape="round" size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <div text-center padding>
+        If you don't have an account, please <a routerLink='/register'>
+          register</a> first!
+          </div>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

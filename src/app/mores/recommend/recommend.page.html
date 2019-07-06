@@ -1,0 +1,25 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>recommend</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button  routerLink="/app/tabs/home" routerDirection="forward">next</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngFor="let item of items">
+      <ion-avatar slot="start">
+        <img [src]="item.profile">
+      </ion-avatar>
+      <ion-label>
+        <h3>{{item.name}}</h3>
+        <p style="color:#02C39A">{{item.detail}}</p>
+        <p>มีผู้ติดตาม 100 คน</p>
+      </ion-label>
+      <ion-buttons slot="end" >
+        <ion-button fill="outline" shape="round">&nbsp; follow &nbsp;</ion-button>
+      </ion-buttons>
+    </ion-item>
+    
+</ion-content>

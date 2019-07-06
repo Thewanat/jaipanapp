@@ -1,0 +1,24 @@
+<ion-header no-border>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref=""></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<h1 style="color:#00A896">Forgot password</h1>
+<ion-label>
+  <p>Please entor your email to receive a link to create a new password via email.</p>
+</ion-label>
+<form  #form="ngForm" (ngSubmit)="forgot(form)">
+<div padding>
+    <ion-item>
+      <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+    </ion-item>
+  </div>
+  <div padding>
+    <ion-button shape="round"   size="large" type="submit" [disabled]="form.invalid" expand="block">Send</ion-button>
+  </div>
+</form>
+</ion-content>

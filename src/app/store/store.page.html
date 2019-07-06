@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-searchbar></ion-searchbar>
+    <ion-segment no-border-top (ionChange)="segmentChanged($event)"  >
+      <ion-segment-button value="standard" checked>
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="hybrid">
+        <ion-label>Top</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="sat">
+        <ion-label>New</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <!--
+  <div text-center style="color: #fff;
+  background: #1b4965;
+  padding: 10px;">
+    <h3>คลังภาพวาด  ให้คุณได้เลือกภาพประกอบสำหรับการ์ดของคุณฟรี!!</h3>
+  </div>
+  <div style="white-space: nowrap;padding:8px;margin:5px 0px;overflow-y: scroll;background:#fff">
+      <div routerLink="/app/tabs/store/{{item.id}}"  *ngFor="let item of items" style="width:70px;display:inline-table;margin: 0px 8px;text-align: center">
+      <img  [src]="item.user.profile" style="border-radius: 100%;
+      width: 65px;
+      object-fit: cover;padding: 3px;
+    border: 2px solid #bee9e8;
+      ">
+      <span style="font-size: 14px;
+      margin-top: 2px;display: block">{{item.user.name}}</span>
+      </div>
+  </div>
+
+  <div style="white-space: nowrap;overflow-y: scroll;padding:10px 5px;border-bottom:2px solid #eee;">
+      <div style="display:inline-table;margin: 0px 4px; padding: 4px 10px;font-size:18px;font-weight: 600;
+          color: #028090;
+      " *ngFor="let item of tags">
+        {{item.title}}
+      </div>
+  </div>
+
+
+  -->
+  <!--
+    <div routerLink="/draw/{{item.id}}"  *ngFor="let item of draws" >
+      <img [src]="item.draw" style="width:33%;float:left;padding:2%">
+    </div>
+  -->
+
+  <div *ngFor="let item of items" style="display: inline-block;padding:5px;margin:5px 15px;border:1px solid #eee;border-radius: 15px ;   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 25px  0px !important;">
+    <div routerLink="/app/tabs/store/{{item.id}}" style="width:40%;float: left;">
+      <img [src]="item.drawTag" alt="">
+    </div>
+    <div style="width:60%;float: left;">
+      <h1 routerLink="/app/tabs/store/{{item.id}}" style="margin: 0px;margin-top:10px;font-size:20px;font-weight: 600;">{{item.drawname}}</h1>
+      <p routerLink="/app/tabs/store/{{item.id}}" style="margin-top: 10px;margin-bottom: 0px;font-size: 14px;">{{item.drawnameDetail}}</p>
+      <p routerLink="/profile/{{item.user.id}}"  style="margin: 2px;color:#05668D;font-size: 14px;">{{item.user.name}}</p>
+
+      <div>
+        <p style="float: left;"><span style="font-weight:600;color:#028090;">{{item.drawUse}}</span> useing</p>
+        <ion-button fill="outline" size="small" style="float: right;font-weight:600">select</ion-button>
+      </div>
+    </div>
+  </div>
+<!--
+    <div *ngFor="let item of items" style="padding: 30px;display: block;border-bottom: 1px solid #e6e6e6;">
+          <div style="position: relative;
+          text-align: left;
+          margin: auto;">
+            <ion-button  routerLink="/app/tabs/write" style="position: absolute;right: 0px;top:0px" size="small">use</ion-button>
+            <img src="{{item.user.profile}}" style="width: 35px;float: left;margin: 0px 10px;    object-fit: cover;
+            border-radius: 100%;">
+            <div expand="full" routerLink="/profile/{{item.user.id}}" routerDirection="forward">
+              <div style="font-weight: 600;font-size:14px;">{{item.user.name}}</div>
+              <div  style="font-size:12px">{{item.user.detail}}</div>
+            </div>
+            
+          </div>
+
+          <div routerLink="/app/tabs/store/{{item.id}}" routerDirection="forward" style="text-align: center;padding:10px;">
+            <img [src]="item.drawTag" style="width:70%">
+            <h1 style="margin: 0px;">{{item.drawname}}</h1>
+            <p style="margin: 2px;
+            color: #989aa2;font-size:20px">{{item.drawnameDetail}}</p>
+            <p style="margin: 0px 0px 5px 0px;
+            color: #989aa2;">จำนวนการใช้: {{item.drawUse}}</p>
+          </div>
+
+    </div>
+
+
+
+
+  
+    <div *ngFor="let item of items"  
+    style="width: 48%;
+    float: left;
+    border: 1px solid #f4f5f8;
+    background: #f4f5f81c;
+    margin: 2px;" >
+      <ion-avatar style="width:50%;height: 50%;margin: 30px auto 10px;">
+        <img src="{{item.profile}}">
+      </ion-avatar>
+      <ion-label style="text-align: center">
+      <span expand="full" routerLink="/profile/{{item.id}}" routerDirection="forward">
+        <h1>{{item.name}}</h1>
+        <p>{{item.detail}}</p>
+      </span>
+        <div class="row">
+            <div class="col text-center">
+              <ion-button  routerLink="/gift/{{item.id}}" routerDirection="forward" fill="clear"size="default"><ion-icon name="gift"></ion-icon></ion-button>
+            </div>
+        </div>
+      </ion-label>
+    </div>
+    -->
+</ion-content>

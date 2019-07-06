@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      notification
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<div *ngFor="let item of items">
+  <div  *ngIf="item.itemType == 1 || item.itemType == 2" routerLink="/card/{{ item.id }}" routerDirection="forward"  style="max-width: 400px;   background: rgba(230, 230, 230, 0.7);box-shadow: rgba(0, 0, 0, 0.02) 0px 10px 20px 0px !important;position: relative;height: 90px;border-radius: 8px; margin: 10px auto;">
+    <a>
+        <img src="https://image.flaticon.com/icons/svg/132/132284.svg" alt=""style=" 
+          border-radius: 4px;    width: 20px;height: 20px;background: #eee; top: 11px;position: absolute;left: 12px;">
+        <div style=" position: absolute;
+        top: 11px;
+        left: 40px;
+        color: #444;
+        font-size: 17px;
+        font-weight: bold;
+        ">sadha</div>
+    </a>
+    <div style=" font-weight: bold;
+    font-size: 15px;
+    color: #000;
+    left: 12px;position: absolute;
+    top: 41px" > {{item.user.name}}</div>
+    <div style="color: #111;position: absolute;
+    font-size: 14px;
+    top: 62px;
+    left: 12px;"> {{item.item}}</div>
+    <div style="    font-size: 12px;position: absolute;
+    color: #222;
+    right: 12px;
+    top: 14px;" > {{item.notificationTime}}</div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div *ngIf="item.itemType == 3 || item.itemType == 4" routerLink="/card/{{ item.id }}" routerDirection="forward"  style="max-width: 400px;   background: rgba(230, 230, 230, 0.7);box-shadow: rgba(0, 0, 0, 0.02) 0px 10px 20px 0px !important;position: relative;height: 90px;border-radius: 8px; margin: 10px auto;">
+    <a>
+        <img src="https://image.flaticon.com/icons/svg/70/70157.svg" alt=""style=" 
+          border-radius: 4px;    width: 20px;height: 20px;background: #eee; top: 11px;position: absolute;left: 12px;">
+        <div style=" position: absolute;
+        top: 11px;
+        left: 40px;
+        color: #444;
+        font-size: 17px;
+        font-weight: bold;
+        ">comments</div>
+    </a>
+    <div style=" font-weight: bold;
+    font-size: 15px;
+    color: #000;
+    left: 12px;position: absolute;
+    top: 41px" > {{item.user.name}}</div>
+    <div style="color: #111;position: absolute;
+    font-size: 14px;
+    top: 62px;
+    left: 12px;"> {{item.item}}</div>
+    <div style="    font-size: 12px;position: absolute;
+    color: #222;
+    right: 12px;
+    top: 14px;" > {{item.notificationTime}}</div>
+  </div>
+
+  <div  *ngIf="item.itemType == 5" routerLink="/app/tabs/notification/{{ item.id }}" routerDirection="forward"  style="max-width: 400px;   background: rgba(230, 230, 230, 0.7);box-shadow: rgba(0, 0, 0, 0.02) 0px 10px 20px 0px !important;position: relative;height: 90px;border-radius: 8px; margin: 10px auto;">
+    <a>
+        <img src="https://image.flaticon.com/icons/svg/126/126516.svg" alt=""style=" 
+          border-radius: 4px;    width: 20px;height: 20px;background: #eee; top: 11px;position: absolute;left: 12px;">
+        <div style=" position: absolute;
+        top: 11px;
+        left: 40px;
+        color: #444;
+        font-size: 17px;
+        font-weight: bold;
+        ">messages</div>
+    </a>
+    <div style=" font-weight: bold;
+    font-size: 15px;
+    color: #000;
+    left: 12px;position: absolute;
+    top: 41px" > {{item.user.name}}</div>
+    <div style="color: #111;position: absolute;
+    font-size: 14px;
+    top: 62px;
+    left: 12px;"> {{item.item}}</div>
+    <div style="    font-size: 12px;position: absolute;
+    color: #222;
+    right: 12px;
+    top: 14px;" > {{item.notificationTime}}</div>
+  </div>
+
+
+  <div  *ngIf="item.itemType == 6" routerLink="/app/tabs/notification/{{ item.id }}"  routerDirection="forward" style="max-width: 400px;   background: rgba(230, 230, 230, 0.7);box-shadow: rgba(0, 0, 0, 0.02) 0px 10px 20px 0px !important;position: relative;height: 90px;border-radius: 8px; margin: 10px auto;">
+    <a>
+        <img src="https://image.flaticon.com/icons/svg/907/907830.svg" alt=""style=" 
+          border-radius: 4px;    width: 20px;height: 20px;background: #eee; top: 11px;position: absolute;left: 12px;">
+        <div style=" position: absolute;
+        top: 11px;
+        left: 40px;
+        color: #444;
+        font-size: 17px;
+        font-weight: bold;
+        ">download</div>
+    </a>
+    <div style=" font-weight: bold;
+    font-size: 15px;
+    color: #000;
+    left: 12px;position: absolute;
+    top: 41px" > {{item.user.name}}</div>
+    <div style="color: #111;position: absolute;
+    font-size: 14px;
+    top: 62px;
+    left: 12px;"> {{item.item}}</div>
+    <div style="    font-size: 12px;position: absolute;
+    color: #222;
+    right: 12px;
+    top: 14px;" > {{item.notificationTime}}</div>
+  </div>
+
+
+  
+</div>
+
+</ion-content>

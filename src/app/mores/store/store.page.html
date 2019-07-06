@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/more"></ion-back-button>
+      </ion-buttons>
+    <ion-title>store</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content center text-center>
+    <div *ngFor="let item of items"  routerLink="/app/tabs/more/store/{{item.id}}" routerDirection="forward" style="text-align: center;width: 50%;float: left;padding:10px;">
+      <img [src]="item.drawTag">
+      <h3 style="margin: 0px;">{{item.drawname}}</h3>
+      <p style="margin: 0px;color:#989aa2;">{{item.user.name}}</p>
+    </div>
+    
+</ion-content>

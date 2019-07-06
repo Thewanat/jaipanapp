@@ -1,0 +1,60 @@
+<ion-header no-border>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/store"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <div style="background: #fff">
+        <ion-avatar style="width: 120px;
+        height: 120px;margin: auto">
+          <img src="{{item.drawTag}}">
+        </ion-avatar>
+        <ion-label style="text-align: center">
+        <h1 style="font-size:22px">{{item.drawname}}</h1>
+        <p>{{item.drawnameDetail}}</p>
+        <p routerLink="/profile/{{item.user.id}}" style="color:#02C39A">{{item.user.name}}</p>
+          <div class="row" style="margin-top: 20px">
+
+          </div>
+          <div style="display: table; margin: auto;padding: 5px 14%;
+          width: 100%;
+          background: #F0F3BD;">
+            <div style="float: left; padding: 10px 15px;width: 33%;">
+                <ion-button size="small" fill="clear"> 
+                    <ion-icon slot="icon-only" src="https://image.flaticon.com/icons/svg/61/61222.svg" ></ion-icon>
+                </ion-button>
+                <span style="font-size: 12px;display: block;font-weight: 600;
+                color: #8a8b8a;">Use</span>
+              <span style=" font-size: 20px;margin-top:5px;
+              display: block;">{{item.drawUse}}</span> 
+            </div> 
+            <div style="float: left; padding: 10px 15px;width: 33%;">
+              <ion-button size="small"  fill="clear"> 
+                <ion-icon slot="icon-only" src="https://image.flaticon.com/icons/svg/1288/1288710.svg" ></ion-icon>
+              </ion-button>
+                <span style="font-size: 12px;display: block;font-weight: 600;
+                color: #8a8b8a;">Like</span>
+              <span style=" font-size: 20px;margin-top:5px;
+              display: block;">{{item.drawUse}}</span> 
+            </div> 
+            <div style="float: left; padding: 10px 15px;width: 33%;">
+              <ion-button size="small"  fill="clear" routerLink="/review/{{item.user.id}}" > 
+                  <ion-icon slot="icon-only" src="https://image.flaticon.com/icons/svg/126/126501.svg" ></ion-icon>
+              </ion-button>
+                <span style="font-size: 12px;display: block;font-weight: 600;
+                color: #8a8b8a;">Review</span>
+              <span style=" font-size: 20px;margin-top:5px;
+              display: block;">{{item.drawUse}}</span> 
+            </div> 
+          </div>
+        </ion-label>
+      </div>
+
+<div *ngFor="let item of items" >
+  <img [src]="item.draw" style="width:33%;float:left;padding:2%">
+</div>
+
+</ion-content>

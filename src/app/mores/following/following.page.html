@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>following</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let item of profiles">
+    <ion-avatar slot="start">
+      <img [src]="item.profile">
+    </ion-avatar>
+    <ion-label>
+      <h3>{{item.name}}</h3>
+      <p style="color:#02C39A">{{item.detail}}</p>
+      <p>มีผู้ติดตาม 100 คน</p>
+    </ion-label>
+    <ion-buttons slot="end" >
+      <ion-button fill="outline" shape="round">&nbsp; follow &nbsp;</ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/app/tabs/store"></ion-back-button>
+    </ion-buttons>
+    <ion-title>review</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-item *ngFor="let item of profiles">
+      <ion-avatar slot="start">
+        <img [src]="item.profile">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.name}}</h2>
+        <h3 style="color:#02C39A">{{item.detail}}</h3>
+        <p>I've got enough on my plate as it is, and I...</p>
+      </ion-label>
+    </ion-item>
+</ion-content>

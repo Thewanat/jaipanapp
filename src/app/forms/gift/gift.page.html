@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/app/tabs/write"></ion-back-button>
+    </ion-buttons>
+    <ion-title>gift</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button  (click)="logForm()">create</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item  routerLink="/profile/{{item.id}}" routerDirection="forward">
+      <ion-avatar slot="start">
+        <img [src]="item.profile">
+      </ion-avatar>
+      <ion-label>
+        <h3>{{item.name}}</h3>
+        <p>{{item.detail}}</p>
+      </ion-label>
+    </ion-item>
+    <form (ngSubmit)="logForm()">
+        <div contenteditable="true"
+        style="
+        text-align:center;font-size: 40px;
+        margin-top: 100px;
+        outline:none;font-family: '2005iannnnnUBC';
+        border-bottom: 1px solid #eaedf1;"
+        (input)="model=$event.target.innerHTML">
+        </div>
+          <ion-input type="hidden" [value]="model" [(ngModel)]="todo.card" name="card"></ion-input>
+      
+      
+          <div  style="width:40%;margin:30px auto;">
+            <img [src]="todo.cardPhoto" style="width:100%;">
+          </div>
+            
+        
+      
+          <h2 style="text-align: center;font-family: '2005iannnnnUBC';font-weight: normal;border-top: 1px solid rgb(234, 237, 241);padding-top: 25px;">คลิกที่ภาพด้านล่าง เพื่อเลือกภาพวาดประกอบการ์ด</h2>
+          <div style="padding: 30px;
+          overflow: auto;
+          height: 250px;-webkit-overflow-scrolling:touch;">
+          
+          <label *ngFor="let item of items">
+            <input type="radio" name="cardPhoto" id="one" [value]="item.draw" [(ngModel)]="todo.cardPhoto">
+            <img src="{{item.draw}}" width="90px" style="margin:15px">
+          </label>
+          
+          </div>
+        </form>
+      
+</ion-content>

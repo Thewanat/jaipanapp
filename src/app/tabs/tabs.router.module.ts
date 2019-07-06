@@ -8,42 +8,75 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../home/home.module#HomePageModule'
+          },
+          {
+            path: ':id',
+            loadChildren: '../card/card.module#CardPageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'store',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../store/store.module#StorePageModule'
+          },
+          {
+            path: ':id',
+            loadChildren: '../mores/drawstore/drawstore.module#DrawstorePageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'write',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../write/write.module#WritePageModule'
+          },
+        ]
+      },
+      {
+        path: 'notification',
+        children: [
+          {
+            path: '',
+            loadChildren: '../notification/notification.module#NotificationPageModule'
+          },
+          {
+            path: ':id',
+            loadChildren: '../message/message.module#MessagePageModule'
           }
+        ]
+      },
+      {
+        path: 'more',
+        children: [
+          {
+            path: '',
+            loadChildren: '../more/more.module#MorePageModule'
+          },
+          { path: 'liked', loadChildren: '../mores/liked/liked.module#LikedPageModule' },
+          { path: 'aboutus', loadChildren: '../mores/aboutus/aboutus.module#AboutusPageModule' },
+          { path: 'help', loadChildren: '../mores/help/help.module#HelpPageModule' },
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: 'app/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: 'app/tabs/home',
     pathMatch: 'full'
   }
 ];

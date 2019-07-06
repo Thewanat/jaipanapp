@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div  style="
+  max-width: 560px;
+  margin: 20px auto;
+  font-family: '2005iannnnnUBC';">
+
+    <div style="padding: 10px 60px 5px; text-align: center;">
+      <div style="font-size: 40px; margin-top: 60px;" [innerHTML]="item.card"></div> 
+        <div style="font-weight: bold; font-size: 26px;">{{item.user.name}}</div> 
+        <div style="font-size: 18px;">{{item.cardTime}}</div> 
+        <img [src]="item.cardPhoto" alt="" style="width: 80%; margin: 30px 0px 15px;">
+    </div>
+
+    <div style="font-size: 25px;margin: 0px 5px 0px 10px;display: inline-block;">
+        <span>
+            <span>
+                <span style=" margin: 0px 5px 0px 10px;">{{item.cardLike}}</span>
+                ล้านปลื้ม
+            </span> 
+        </span>
+        <span style="float: right;">
+            <span style=" margin: 0px 5px 0px 10px;">{{item.cardComment}}</span>
+            comments
+        </span>
+        <span style="float: right;">
+            <span style=" margin: 0px 5px 0px 10px;">{{item.cardShare}}</span>
+            shared
+        </span>
+        <span style="float: right;">
+          <span style=" margin: 0px 5px 0px 10px;">{{item.cardView}}</span>
+          view
+      </span>
+    </div>
+
+    <div style="width: 100%; display: table; clear: both; line-height: 30px;"><div style="display: block; width: 30%; height: 30px; float: left; border-top: 1px solid rgb(234, 237, 241);"><div style="padding: 5px; margin: auto; display: table;"><img id="like_7_23" src="https://image.flaticon.com/icons/svg/1865/1865963.svg" alt="" class="clike" style="float: left; width: 25px; margin: 3px 0px;"> 
+      <div style="display: inline-block;">
+        <div style="font-size: 25px; margin: 3px 0px 0px 2px;">ปลื้มเลย</div>
+      </div>
+    </div></div> 
+    <div style="width: 35%; float: left; display: inline-block; border-top: 1px solid rgb(234, 237, 241);"><div routerLink="/app/tabs/home/{{item.id}}" routerDirection="forward" style="padding: 5px; margin: auto; display: table;"><img src="https://image.flaticon.com/icons/svg/134/134819.svg" alt="" style="float: left; width: 25px; margin: 3px 0px;"> <div style="display: inline-block;"><div style="font-size: 25px; margin: 3px 0px 0px 5px;">comment</div></div></div></div> 
+    <div style="width: 35%; float: left; display: inline-block; border-top: 1px solid rgb(234, 237, 241);"><div style="padding: 5px 10px; margin: auto; display: table; position: relative;"><div id="share_7" style="position: absolute; display: none; margin-top: -45px;"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <div class="social-buttons" style="font-size: 25px; float: right; margin-top: 10px;"><a href="https://www.facebook.com/sharer/sharer.php?u=https://jaipun.com/card/23" target="_blank" style="color: rgb(78, 113, 168) !important;"><i class="fa fa-facebook-official"></i></a> <a href="https://twitter.com/intent/tweet?url=https://jaipun.com/card/23" target="_blank" style="color: rgb(28, 183, 235) !important;"><i class="fa fa-twitter-square"></i></a> <a href="https://social-plugins.line.me/lineit/share?url=https://jaipun.com/card/23" target="_blank"><img src="https://image.flaticon.com/icons/svg/124/124027.svg" style="width: 20px;"></a></div></div> <img src="https://image.flaticon.com/icons/svg/1787/1787887.svg" alt="" style="float: left; width: 25px; margin: 3px 0px;"> <div style="display: inline-block;"><div style="font-size: 25px; margin: 3px 0px 0px 10px;">ส่งบุญ</div></div></div></div></div>
+
+
+  </div>
+
+
+
+  <div *ngFor="let item of items" style="
+  max-width: 560px;
+  background: rgb(255, 255, 255);
+  margin: 20px auto;
+  font-family: '2005iannnnnUBC';">
+
+    <div style="padding: 10px 35px 5px; text-align: center;">
+      <div expand="full" routerLink="/card/{{item.id}}" routerDirection="forward" style="font-size: 40px; margin-top: 60px;" [innerHTML]="item.card"></div> 
+        <div style="font-size: 18px;">{{item.cardTime}}</div> 
+        <img  routerLink="/app/tabs/more/store/{{item.id}}" routerDirection="forward" [src]="item.cardPhoto" alt="" style="width: 80%; margin: 30px 0px 15px;">
+    </div>
+
+  </div>
+
+</ion-content>

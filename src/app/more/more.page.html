@@ -1,0 +1,30 @@
+<ion-header no-border>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/home"></ion-back-button>
+      </ion-buttons>
+        <ion-buttons slot="primary">
+          <ion-button  routerLink="/edit" color="secondary">
+            edit
+          </ion-button>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+    <ion-avatar style="width:100px;height:100px;margin: auto"  routerLink="/edit" >
+      <img src="{{item.profile}}">
+    </ion-avatar>
+    <ion-label style="text-align: center"  routerLink="/edit" >
+    <h1 style="font-size:22px" >{{item.name}}</h1>
+    <p>{{item.detail}}</p>
+    </ion-label>
+   
+  <ion-list style="margin-top:40px">
+      <ion-item expand="full" *ngFor="let item of items" routerLink="{{item.path}}" routerDirection="forward">
+        <ion-icon size="small" [src]="item.icon" item-left style="margin:0px 10px"></ion-icon>
+        <ion-label>{{ item.title }}</ion-label>
+      </ion-item>
+
+  </ion-list>
+</ion-content>

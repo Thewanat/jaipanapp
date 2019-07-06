@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/store"></ion-back-button>
+      </ion-buttons>
+    <ion-title>drawer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngFor="let item of items">
+      <ion-avatar slot="start">
+        <img [src]="item.profile">
+      </ion-avatar>
+      <ion-label>
+        <h3>{{item.name}}</h3>
+        <p>dolor sit amet</p>
+        <p>consectetur adipiscing elit. Duis ut urna neque.</p>
+      </ion-label>
+    </ion-item>
+</ion-content>

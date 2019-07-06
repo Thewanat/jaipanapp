@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/app/tabs/store"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngFor="let item of items" style="padding:20px 5px;display: block;border-bottom: 1px solid #e6e6e6;">
+        <div style="position: relative;
+        text-align: left;
+        margin: auto;">
+          <img src="{{item.user.profile}}" style="width: 40px;float: left;margin: 0px 10px;    object-fit: cover;
+          border-radius: 100%;">
+          <div expand="full" routerLink="/profile/{{item.user.id}}" routerDirection="forward">
+            <div style="font-weight: 600;font-size:18px;">{{item.user.name}}</div>
+            <div  style="font-size:12px">{{item.user.detail}}</div>
+          </div>
+          
+        </div>
+
+        <div routerLink="/app/tabs/store/{{item.id}}" routerDirection="forward" style="padding:10px;">
+          <img [src]="item.drawTag" style="margin: auto;
+          width: 60%;
+          display: block;">
+          <img src="https://image.flaticon.com/icons/svg/742/742751.svg" style="width:20px"><span style="margin: 10px;">10</span>
+          <img src="https://image.flaticon.com/icons/svg/134/134907.svg" style="width:20px"><span style="margin: 10px;">10</span>
+          <img src="https://image.flaticon.com/icons/svg/291/291201.svg" style="width:20px"><span style="margin: 10px;">10</span>
+
+          <p style="margin: 2px;
+          color: #989aa2;font-size:20px">{{item.drawnameDetail}}</p>
+          <p style="margin: 0px 0px 5px 0px;
+          color: #989aa2;">จำนวนการใช้: {{item.drawUse}}</p>
+          
+
+                <div >
+                    <div style="margin: 15px 20px;">
+                        <img [src]="item.comments.user.profile" alt="" style="
+                        margin: 0px 10px 0px 0px;
+                        border-radius: 100px;
+                        border: 1px solid #BDBDBD;
+                        height: 30px;
+                        width: 30px;
+                        object-fit: cover;
+                        display: inline-block;
+                        float: left;
+                        "> 
+                        <div style="display: inline-block;">
+                            <span style="font-weight: bold;font-size: 16px;">{{item.comments.user.name}}</span><span style="
+                                font-size: 16px;
+                                margin: 0px 5px;
+                            " >{{item.comments.body}}</span>   
+                            <div style="font-size: 13px;" >{{item.comments.commentTime}}</div>
+                        </div> 
+                    </div>
+                  </div>
+        </div>
+
+  </div>
+
+</ion-content>

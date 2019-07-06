@@ -1,0 +1,39 @@
+<ion-header no-border>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/tabs/home"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-avatar style="width:100px;height:100px;margin:20px auto;position: relative;">
+    <ion-icon routerLink="/crop" routerDirection="forward" style="position: absolute;top:0px;right:0px" size="large" name="camera"></ion-icon>
+    <img src="{{item.profile}}">
+  </ion-avatar>
+  <form  #form="ngForm" (ngSubmit)="edit(form)">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12"> 
+          <div padding>
+            <ion-item>
+              <ion-input name="email" type="email" [value]="item.email" [(ngModel)]="item.email"  placeholder="your@email.com" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input  name="name" type="text" [value]="item.name" [(ngModel)]="item.name" placeholder="name" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="detail" type="text" [value]="item.detail" [(ngModel)]="item.detail"  placeholder="Detail" ngModel required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button shape="round" expand="full" type="submit" [disabled]="form.invalid">Edit</ion-button>
+            <p>
+            <ion-button shape="round" expand="full" routerLink="/changepwd" routerDirection="forward"    >Change password</ion-button>
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
